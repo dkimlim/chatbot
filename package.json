@@ -6,7 +6,6 @@
   "dependencies": {
     "botpress": "1.x",
     "botpress-platform-webchat": "^0.5.0",
-    "botpress-slack": "^1.0.23",
     "botpress-web": "1.x"
   },
   "scripts": {
