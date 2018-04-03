@@ -1,0 +1,102 @@
+welcome: # this is the #welcome bloc referenced in index.js
+  - typing: true
+    text: # Picks one randomly
+      - Hey there! Welcome to Vintage Shoppe 🎩
+      - Hello {{user.first_name}} 👋🏻 Welcome to Vintage Shoppe!
+      - Good day 😀 Welcome to Vintage Shoppe!
+  - text: Please type "menu" to see your options
+    typing: 2s
+  - wait: 1s
+  - text: When you are done, simply type "goodbye"
+    typing: 1s
+  # - text: Make sure to check out the 'index.js' file to see how I work
+  #   typing: true
+  # - wait: 5s
+  # - text: You can say goodbye now
+  #   typing: 1s
+
+# textWithQuickReplies: #menu options
+#   - text: From 1 to 5 (best), was this helpful?
+#     quick_replies:
+#       - <.B1> 1 #Starting with a '.' before B1 will prepend the name of the bloc in uppercase
+#       - <.B2> 2
+#       - <.B3> 3
+#       - <.B4> 4
+#       - <.B5> 5
+
+# Not working
+# textWithQuickReplies_reply:
+#   - You pressed button '{{button}}{{answer}}'
+
+goodbye:
+  - text: From 1 to 5 (best), was this helpful?
+    quick_replies:
+      - <.B1> 1 ⭐ 
+      - <.B2> 2 ⭐
+      - <.B3> 3 ⭐
+      - <.B4> 4 ⭐
+      - <.B5> 5 ⭐
+
+  # - text: You are leaving because of reason {{reason}}
+  #   typing: true
+  # - Hope to see you back again soon! # if no other properties, you can just send a strings
+
+menu:
+  - text: Here are your options
+    typing: 250ms
+    form:
+      title: Menu
+      id: menu
+      elements:
+        - select:
+            label: Select one item
+            name: Menu title
+            placeholder: Select one option
+            required: true
+            options:
+              - option:
+                  label: "Product is available?"
+                  value: "Product"
+              - option:
+                  label: "Have clothes to donate?"
+                  value: "Donate"
+              - option:
+                  label: "Borrow clothes as stylist?"
+                  value: "Stylist"
+              - option:
+                  label: "Looking for store locations?"
+                  value: "Location"
+              - option:
+                  label: "Another request"
+                  value: "Other"    
+        - textarea:
+            label: Text
+            placeholder: More details about your request
+            name: More details
+            maxlength: 100
+            minlength: 2
+
+# Menu answers
+product: 
+  - text: Please add a detailed description of the item 👠. We will get back to you within 48 hours ⏱.
+    typing: 250ms
+
+donate: 
+  - text: Sorry 😓 We are not accepting clothing donations at the moment.
+    typing: 250ms
+
+stylist: 
+  - text: Lovely 💓 We accept stylist loans as long as we are credited.
+    typing: 250ms
+
+
+location: 
+  - text: We have 2 stores in Montreal:📍5330 Saint-Laurent and 📍4080 Saint-Laurent.
+    typing: 250ms    
+
+other: 
+  - text: Leave us a detailed description of how we can help. 
+          We'll get back to you within 48 hours ⏱.
+    typing: 250ms
+
+
