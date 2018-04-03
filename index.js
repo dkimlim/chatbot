@@ -1,17 +1,12 @@
 module.exports = function(bp) {
   bp.middlewares.load()
-
-  /* Things to do:
-    [ ] Answering to hello world
-    [ ] Answering to any other message
-  */
   
-  // Initial response
+  // Welcome response initialized by user
   bp.hear(/hello|hey|hi|allo|salut|bonjour/i, (event, next) => {
     event.reply('#welcome') 
   })
 
-  // You can also pass a matcher object to better filter events
+  // Goodbye handler
   bp.hear({
     type: /message|text/i,
     text: /exit|bye|goodbye|quit|done|leave|stop/i
@@ -50,35 +45,5 @@ module.exports = function(bp) {
   bp.hear(/Other/, (event, next) => {
     event.reply('#other') 
   })
-
-  //survey submit
-  // bp.hear({ 
-  //   type: 'form', 
-  //   formId: "menu",
-    
-  // }, (event, next) => {
-      
-  // });
-
-
-  // Quick menu options
-  // bp.hear({
-  //   type: /message|text/i,
-  //   text: /rating|rate|excellent/i
-  // }, (event, next) => {
-  //   event.reply('#textWithQuickReplies')
-  // })
-
-  // Not working
-  // bp.hear('TEXTWITHQUICKREPLIES.B1', (event, next) => {
-  //   event.reply('#textWithQuickReplies_reply', { button: 'Borrow clothes as a stylist' })
-  // })
-
-  // bp.hear('TEXTWITHQUICKREPLIES.B2', (event, next) => {
-  //   event.reply('#textWithQuickReplies_reply', { 
-  //     button: 'Have clothes to give', 
-  //     answer: 'Sorry we do not accept clothing donations'
-  //   })
-  // })
   
 }

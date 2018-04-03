@@ -9,26 +9,8 @@ welcome: # this is the #welcome bloc referenced in index.js
   - wait: 1s
   - text: When you are done, simply type "goodbye"
     typing: 1s
-  # - text: Make sure to check out the 'index.js' file to see how I work
-  #   typing: true
-  # - wait: 5s
-  # - text: You can say goodbye now
-  #   typing: 1s
 
-# textWithQuickReplies: #menu options
-#   - text: From 1 to 5 (best), was this helpful?
-#     quick_replies:
-#       - <.B1> 1 #Starting with a '.' before B1 will prepend the name of the bloc in uppercase
-#       - <.B2> 2
-#       - <.B3> 3
-#       - <.B4> 4
-#       - <.B5> 5
-
-# Not working
-# textWithQuickReplies_reply:
-#   - You pressed button '{{button}}{{answer}}'
-
-goodbye:
+goodbye: # this is the #goodbye bloc referenced in index.js. Initialized by user when they type "goodbye"
   - text: From 1 to 5 (best), was this helpful?
     quick_replies:
       - <.B1> 1 ⭐ 
@@ -37,11 +19,7 @@ goodbye:
       - <.B4> 4 ⭐
       - <.B5> 5 ⭐
 
-  # - text: You are leaving because of reason {{reason}}
-  #   typing: true
-  # - Hope to see you back again soon! # if no other properties, you can just send a strings
-
-menu:
+menu: # this is the #menu bloc referenced in index.js. Initialized by user when they type "menu"
   - text: Here are your options
     typing: 250ms
     form:
@@ -88,7 +66,6 @@ donate:
 stylist: 
   - text: Lovely 💓 We accept stylist loans as long as we are credited.
     typing: 250ms
-
 
 location: 
   - text: We have 2 stores in Montreal:📍5330 Saint-Laurent and 📍4080 Saint-Laurent.
