@@ -6,7 +6,7 @@ A fully customized chatbot created with [Botpress](https://github.com/botpress/b
 
 
 ## Screenshots
-!["Screenshot of chat sample"]()
+!["Screenshot of chat sample"](https://github.com/dkimlim/chatbot/blob/master/docs/chatbot1.gif)
 
 
 ## Getting Started
